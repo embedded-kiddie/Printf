@@ -12,7 +12,8 @@ void setup() {
 #define EPSILON 0.00001
 
   for (float f = 0.0; f <= 1.0 + EPSILON; f += 0.01) {
-    printf("f = %4.2f\n", f);
+    printf("f = %5.3f\n", f);
+    printf("e = %5.3e\n", f);
   }
 }
 

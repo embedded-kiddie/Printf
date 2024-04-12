@@ -7,8 +7,6 @@
 #include "Arduino.h"
 #include "Serial.h"
 
-int Printf(const char* fmt, ...);
-
-#define printf(...)  Printf(__VA_ARGS__);
+int printf(const char* fmt, ...);
 
 #endif /* PRINTF_H */

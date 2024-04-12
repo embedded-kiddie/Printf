@@ -5,13 +5,13 @@
 
 #define PRINTF_BUF_SIZE  256
 
-int Printf(const char* fmt, ...) {
+int printf(const char* fmt, ...) {
 	int len = 0;
 	char buf[PRINTF_BUF_SIZE];
 
 	va_list arg_ptr;
 	va_start(arg_ptr, fmt);
-	len = vsnprintf(buf, PRINTF_BUF_SIZE, fmt, arg_ptr); // ヌル文字を含む64文字でカット
+	len = vsnprintf(buf, PRINTF_BUF_SIZE, fmt, arg_ptr);
 	va_end(arg_ptr);
 
 	// output to the serial console through the 'Serial'

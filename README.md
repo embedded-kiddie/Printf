@@ -14,8 +14,8 @@ This library allows you to output a format string to the serial monitor through 
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
-  while (!Serial);
+  Serial.begin(250000);
+  delay(1000); // `while (!Serial);` is not enough for UNO R4 WiFi
 
   for (float f = 0.0; f <= 1.0 + EPSILON; f += 0.01) {
     printf("f = %4.2f\n", f);

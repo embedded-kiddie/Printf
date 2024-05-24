@@ -15,7 +15,7 @@ int printf(const char* fmt, ...) {
 	va_end(arg_ptr);
 
 	// output to the serial console through the 'Serial'
-	len = Serial.write((uint8_t*)buf, (size_t)len);
+	len = Serial.print(buf);
 
 	return len;
 }

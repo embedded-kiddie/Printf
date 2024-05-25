@@ -15,7 +15,15 @@ int printf(const char* fmt, ...) {
 	va_end(arg_ptr);
 
 	// output to the serial console through the 'Serial'
+#if	1
+	len = Serial.write((uint8_t*)buf, (size_t)len);
+#else
 	len = Serial.print(buf);
+#endif
+
+#if defined(ARDUINO_UNOWIFIR4) && 1
+	delay(len / 10); // UNO R4 WiFi needs some delay to fix buffer overrun
+#endif
 
 	return len;
 }

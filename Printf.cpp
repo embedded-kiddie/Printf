@@ -22,7 +22,7 @@ int printf(const char* fmt, ...) {
 #endif
 
 #if defined(ARDUINO_UNOWIFIR4) && 1
-	delay(len / 10); // UNO R4 WiFi needs some delay to fix buffer overrun
+	delay(2); // UNO R4 WiFi needs some delay to fix buffer overrun
 #endif
 
 	return len;

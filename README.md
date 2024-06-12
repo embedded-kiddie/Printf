@@ -14,8 +14,13 @@ This library allows you to output a format string to the serial monitor through 
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(250000);
-  delay(1000); // `while (!Serial);` is not enough for UNO R4 WiFi
+  Serial.begin(115200);
+  while (!Serial);
+
+#ifdef  ARDUINO_UNOR4_WIFI
+  // UNO R4 WiFi needs to wait for a while to complete Serial initialization.
+  delay(1000); // It requires at least 600 ms.
+#endif
 
   for (float f = 0.0; f <= 1.0 + EPSILON; f += 0.01) {
     printf("f = %4.2f\n", f);

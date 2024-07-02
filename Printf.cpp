@@ -15,15 +15,7 @@ int printf(const char* fmt, ...) {
 	va_end(arg_ptr);
 
 	// output to the serial console through the 'Serial'
-#if	defined(ARDUINO_UNOR4_MINIMA)
-
-	len = Serial.write((uint8_t*)buf, (size_t)len);
-
-#else // ARDUINO_UNOR4_WIFI
-
-	len = Serial.print(buf);
-
-#endif
+	len = Serial.write((uint8_t*)buf, (size_t)(len + 1));
 
 	return len;
 }
